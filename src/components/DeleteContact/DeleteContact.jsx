@@ -1,32 +1,29 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export class DeleteContact extends Component {
-  static propTypes = {
-    key: PropTypes.number.isRequired,
-    removeItem: PropTypes.func.isRequired,
-  };
-  render() {
-    const { key, removeItem } = this.props;
-    return (
-      <>
-        <button
-          key={key}
-          type="button"
-          onClick={() => {
-            removeItem(key);
-          }}
-        >
-          Delete contact
-        </button>
-      </>
-    );
-  }
-}
+export const DeleteContact = ({ key, removeItem }) => {
+  return (
+    <>
+      <button
+        key={key}
+        type="button"
+        onClick={() => {
+          removeItem(key);
+        }}
+      >
+        Delete contact
+      </button>
+    </>
+  );
+};
 
-// --------------------------------------Clear code up------------------------------
-// --------------------------------------Uncomment one side-------------------------
-// --------------------------------------Code with coments under and tests----------
+DeleteContact.propTypes = {
+  key: PropTypes.number.isRequired,
+  removeItem: PropTypes.func.isRequired,
+};
+
+// -------------------------func component code-----------------------------------------
+// -------------------------UNCOMMENT ABROVE OR UNDER--------------------------
+// -------------------------class component code-------------------------------------
 
 // import { Component } from 'react';
 // import PropTypes from 'prop-types';
